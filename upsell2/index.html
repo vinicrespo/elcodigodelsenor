@@ -96,15 +96,15 @@
         }
 
         .ponto-atual {
-            background: #D4AF37;
-            color: #000;
-            box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+            background: #1a1a1a;
+            border: 2px solid #333;
+            color: #555;
         }
 
         .ponto-futuro {
-            background: transparent;
-            border: 2px dashed #D4AF37;
-            color: #D4AF37;
+            background: #D4AF37;
+            color: #000;
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
         }
 
         /* Linha que conecta - posicionada ATRÁS dos pontos */
@@ -120,7 +120,11 @@
 
         .linha-preenchida {
             flex: 1;
-            background: #D4AF37;
+            background-image: repeating-linear-gradient(to right,
+                    #D4AF37 0px,
+                    #D4AF37 6px,
+                    transparent 6px,
+                    transparent 12px);
         }
 
         .linha-pontilhada {
