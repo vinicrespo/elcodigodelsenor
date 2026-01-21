@@ -232,15 +232,37 @@
 
         /* ==================== PRODUTO PREVIEW ==================== */
         .produto-preview {
-            max-width: 200px;
+            max-width: 220px;
             margin: 0 auto 30px auto;
+            position: relative;
+            padding: 12px;
+            background: linear-gradient(135deg, #D4AF37 0%, #E8C547 25%, #D4AF37 50%, #B8962E 75%, #D4AF37 100%);
+            border-radius: 12px;
+            box-shadow:
+                0 0 20px rgba(212, 175, 55, 0.3),
+                0 0 40px rgba(212, 175, 55, 0.15),
+                inset 0 0 10px rgba(255, 255, 255, 0.1);
+        }
+
+        .produto-preview::before {
+            content: '';
+            position: absolute;
+            top: 4px;
+            left: 4px;
+            right: 4px;
+            bottom: 4px;
+            background: #0A0A0A;
+            border-radius: 8px;
+            z-index: 0;
         }
 
         .produto-preview img {
             width: 100%;
             height: auto;
             display: block;
-            border-radius: 8px;
+            border-radius: 6px;
+            position: relative;
+            z-index: 1;
         }
 
         /* ==================== BLOCO 3: CONTEÚDO ==================== */
