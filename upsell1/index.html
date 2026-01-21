@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+
+    <title>Guía de las 7 Noches | El Código del Señor</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌙</text></svg>">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #fff;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-size: 17px;
+            line-height: 1.7;
+            color: #555;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 480px;
+            margin: 0 auto;
+            min-height: 100vh;
+        }
+
+        /* Desktop */
+        @media (min-width: 768px) {
+            body {
+                display: flex;
+                justify-content: center;
+                align-items: flex-start;
+                padding: 40px 20px;
+                background: #f5f5f5;
+            }
+
+            .container {
+                background: #fff;
+                border-radius: 24px;
+                box-shadow: 0 10px 60px rgba(0, 0, 0, 0.08);
+                min-height: auto;
+                margin: 0 auto;
+            }
+
+            .bloco:first-child {
+                border-radius: 24px 24px 0 0;
+            }
+
+            .bloco:last-child {
+                border-radius: 0 0 24px 24px;
+            }
+        }
+
+        .bloco {
+            padding: 45px 20px;
+            text-align: center;
+        }
+
+        .bloco-alt {
+            background: #F9F9F6;
+        }
+
+        /* Badge */
+        .badge-app {
+            display: inline-block;
+            background: linear-gradient(135deg, #D4AF37 0%, #E8C547 100%);
+            color: #000;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            padding: 8px 16px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        /* Título */
+        .titulo {
+            font-family: Georgia, 'Times New Roman', serif;
+            font-size: 28px;
+            color: #1a1a1a;
+            margin-bottom: 20px;
+            font-weight: 400;
+        }
+
+        /* Textos */
+        .texto {
+            color: #666;
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+
+        .texto.destaque {
+            color: #1a1a1a;
+            font-weight: 500;
+        }
+
+        .texto-pequeno {
+            font-size: 14px;
+            color: #999;
+            margin-top: 20px;
+        }
+
+        .texto-fim {
+            font-size: 14px;
+            color: #888;
+            font-style: italic;
+            margin-top: 25px;
+            line-height: 1.6;
+        }
+
+        /* App Image */
+        .app-container {
+            text-align: center;
+        }
+
+        .app-image {
+            max-width: 280px;
+            margin: 0 auto;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15);
+        }
+
+        .app-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .app-label {
+            font-size: 14px;
+            color: #D4AF37;
+            font-weight: 500;
+            margin-top: 20px;
+        }
+
+        /* Features */
+        .bloco-titulo {
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            color: #D4AF37;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+        }
+
+        .features {
+            text-align: left;
+            max-width: 320px;
+            margin: 0 auto;
+        }
+
+        .feature {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            padding: 15px 0;
+            border-bottom: 1px solid #e5e5e5;
+        }
+
+        .feature:last-child {
+            border-bottom: none;
+        }
+
+        .feature-icon {
+            font-size: 22px;
+            width: 44px;
+            height: 44px;
+            background: #FDF6E3;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .feature-text {
+            flex: 1;
+        }
+
+        .feature-text strong {
+            display: block;
+            color: #1a1a1a;
+            font-size: 15px;
+            margin-bottom: 2px;
+        }
+
+        .feature-text span {
+            font-size: 13px;
+            color: #888;
+        }
+
+        /* Offer Box */
+        .offer-box {
+            background: linear-gradient(135deg, #FDF6E3 0%, #FFFBEB 100%);
+            border: 2px solid #D4AF37;
+            border-radius: 16px;
+            padding: 25px;
+            margin-bottom: 25px;
+        }
+
+        .offer-label {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: #B8960C;
+            margin-bottom: 10px;
+        }
+
+        .offer-price {
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            gap: 2px;
+        }
+
+        .price-symbol {
+            font-size: 22px;
+            font-weight: 600;
+            color: #22c55e;
+            margin-top: 10px;
+        }
+
+        .price-value {
+            font-size: 60px;
+            font-weight: 700;
+            color: #22c55e;
+            line-height: 1;
+        }
+
+        .price-currency {
+            font-size: 16px;
+            font-weight: 600;
+            color: #22c55e;
+            margin-top: 14px;
+        }
+
+        .offer-note {
+            font-size: 13px;
+            color: #888;
+            margin-top: 8px;
+        }
+
+        /* Widget */
+        .widget-container {
+            max-width: 350px;
+            margin: 0 auto;
+        }
+
+        .widget-placeholder {
+            background: #F5F5F0;
+            border: 2px dashed #ddd;
+            border-radius: 12px;
+            padding: 30px;
+            color: #999;
+            font-size: 14px;
+        }
+
+        /* Responsive */
+        @media (max-width: 480px) {
+            .bloco {
+                padding: 35px 16px;
+            }
+
+            .titulo {
+                font-size: 24px;
+            }
+
+            .price-value {
+                font-size: 52px;
+            }
+
+            .app-preview {
+                max-width: 230px;
+            }
+
+            .feature {
+                gap: 12px;
+            }
+
+            .feature-icon {
+                width: 40px;
+                height: 40px;
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <!-- BLOCO 1: ABERTURA -->
+        <section class="bloco">
+            <div class="badge-app">📱 APLICACIÓN EXCLUSIVA</div>
+            <h1 class="titulo">Ya tienes la oración.</h1>
+            <p class="texto">
+                La mayoría la usa una vez y la olvida.<br>
+                O la repite sin saber si está siguiendo el proceso correctamente.
+            </p>
+            <p class="texto destaque">
+                Por eso existe esto:<br>
+                una guía interactiva que evita improvisaciones durante las 7 noches.
+            </p>
+        </section>
+
+        <!-- BLOCO 2: IMAGEM DO APP -->
+        <section class="bloco">
+            <div class="app-container">
+                <div class="app-image">
+                    <img src="/upsell1/app-screenshot.png" alt="Guía Interactiva de las 7 Noches">
+                </div>
+                <p class="app-label">📲 Acceso directo desde tu celular</p>
+            </div>
+        </section>
+
+        <!-- BLOCO 3: FEATURES -->
+        <section class="bloco bloco-alt">
+            <p class="bloco-titulo">Lo que tendrás acceso:</p>
+
+            <div class="features">
+                <div class="feature">
+                    <span class="feature-icon">🌙</span>
+                    <div class="feature-text">
+                        <strong>Las 7 Noches Guiadas</strong>
+                        <span>Para no saltarte pasos ni improvisar</span>
+                    </div>
+                </div>
+
+                <div class="feature">
+                    <span class="feature-icon">📿</span>
+                    <div class="feature-text">
+                        <strong>El Rosario del Código</strong>
+                        <span>Para los días en que necesitas estructura</span>
+                    </div>
+                </div>
+
+                <div class="feature">
+                    <span class="feature-icon">📚</span>
+                    <div class="feature-text">
+                        <strong>7 Oraciones Extras</strong>
+                        <span>Para mantener el ritmo entre noches</span>
+                    </div>
+                </div>
+
+                <div class="feature">
+                    <span class="feature-icon">❓</span>
+                    <div class="feature-text">
+                        <strong>Preguntas Frecuentes</strong>
+                        <span>Para eliminar dudas que bloquean el ritual</span>
+                    </div>
+                </div>
+            </div>
+
+            <p class="texto-pequeno">
+                Sin configuraciones. Sin complicaciones.<br>
+                Solo abre y sigue el ritual.
+            </p>
+        </section>
+
+        <!-- BLOCO 4: PREÇO + WIDGET + FECHAMENTO -->
+        <section class="bloco">
+
+            <!-- BOX DE OFERTA -->
+            <div class="offer-box">
+                <p class="offer-label">COMENZAR EL RITUAL GUIADO</p>
+                <p class="offer-price">
+                    <span class="price-symbol">$</span><span class="price-value">7</span>
+                </p>
+                <p class="offer-note">Pago único · Acceso inmediato</p>
+            </div>
+
+            <!-- WIDGET HOTMART -->
+            <div class="widget-container">
+                <!-- COLE O WIDGET HOTMART ONE-CLICK ($5) AQUI -->
+                <div class="widget-placeholder">
+                    [WIDGET HOTMART $5]
+                </div>
+            </div>
+
+            <!-- FECHAMENTO -->
+            <p class="texto-fim">
+                Si decides no usar la guía, está bien.<br>
+                La oración ya es tuya.<br><br>
+                La guía existe para quien<br>
+                no quiere improvisar el proceso.
+            </p>
+
+        </section>
+
+    </div>
+</body>
+
+</html>

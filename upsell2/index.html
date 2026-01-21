@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+
+    <title>Ritual de los 21 Días | El Código del Señor</title>
+
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌙</text></svg>">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #fff;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-size: 17px;
+            line-height: 1.8;
+            color: #666;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 480px;
+            margin: 0 auto;
+            min-height: 100vh;
+        }
+
+        @media (min-width: 768px) {
+            body {
+                display: flex;
+                justify-content: center;
+                align-items: flex-start;
+                padding: 40px 20px;
+                background: #f5f5f5;
+            }
+
+            .container {
+                background: #fff;
+                border-radius: 24px;
+                box-shadow: 0 10px 60px rgba(0, 0, 0, 0.08);
+                min-height: auto;
+            }
+
+            .bloco:first-child {
+                border-radius: 24px 24px 0 0;
+            }
+
+            .bloco:last-child {
+                border-radius: 0 0 24px 24px;
+            }
+        }
+
+        .bloco {
+            padding: 45px 20px;
+            text-align: center;
+        }
+
+        .bloco-alt {
+            background: #F9F9F6;
+        }
+
+        /* Badge */
+        .badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #D4AF37 0%, #E8C547 100%);
+            color: #000;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            padding: 8px 16px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        /* Título */
+        .titulo {
+            font-family: Georgia, 'Times New Roman', serif;
+            font-size: 26px;
+            color: #1a1a1a;
+            margin-bottom: 24px;
+            font-weight: 400;
+            line-height: 1.4;
+        }
+
+        /* Textos */
+        .texto {
+            color: #666;
+            margin-bottom: 16px;
+            line-height: 1.8;
+            text-align: center;
+        }
+
+        .texto.destaque {
+            color: #1a1a1a;
+            font-weight: 500;
+        }
+
+        .subtitulo {
+            font-family: Georgia, 'Times New Roman', serif;
+            font-size: 20px;
+            color: #1a1a1a;
+            text-align: center;
+            margin: 30px 0 20px 0;
+        }
+
+        .texto-pequeno {
+            font-size: 14px;
+            color: #999;
+            text-align: center;
+            margin-top: 20px;
+            font-style: italic;
+        }
+
+        .texto-fim {
+            font-size: 14px;
+            color: #888;
+            font-style: italic;
+            text-align: center;
+            margin-top: 25px;
+            line-height: 1.7;
+        }
+
+        /* Produto Preview */
+        .produto-preview {
+            max-width: 260px;
+            margin: 0 auto 15px auto;
+        }
+
+        .produto-preview img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .produto-label {
+            font-size: 14px;
+            color: #D4AF37;
+            font-weight: 500;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        /* Features */
+        .bloco-titulo {
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: #D4AF37;
+            text-transform: uppercase;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .features {
+            text-align: left;
+            max-width: 320px;
+            margin: 0 auto;
+        }
+
+        .feature {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            padding: 15px 0;
+            border-bottom: 1px solid #e5e5e5;
+        }
+
+        .feature:last-child {
+            border-bottom: none;
+        }
+
+        .feature-icon {
+            font-size: 22px;
+            width: 44px;
+            height: 44px;
+            background: #FDF6E3;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .feature-text {
+            flex: 1;
+        }
+
+        .feature-text strong {
+            display: block;
+            color: #1a1a1a;
+            font-size: 15px;
+            margin-bottom: 2px;
+        }
+
+        .feature-text span {
+            font-size: 13px;
+            color: #888;
+        }
+
+        /* Offer Box */
+        .offer-box {
+            background: linear-gradient(135deg, #FDF6E3 0%, #FFFBEB 100%);
+            border: 2px solid #D4AF37;
+            border-radius: 16px;
+            padding: 25px;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .offer-label {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: #B8960C;
+            margin-bottom: 10px;
+        }
+
+        .offer-price {
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+        }
+
+        .price-symbol {
+            font-size: 22px;
+            font-weight: 600;
+            color: #22c55e;
+            margin-top: 10px;
+        }
+
+        .price-value {
+            font-size: 60px;
+            font-weight: 700;
+            color: #22c55e;
+            line-height: 1;
+        }
+
+        .offer-note {
+            font-size: 13px;
+            color: #888;
+            margin-top: 8px;
+        }
+
+        /* Widget */
+        .widget-container {
+            max-width: 350px;
+            margin: 0 auto;
+        }
+
+        .widget-placeholder {
+            background: #F5F5F0;
+            border: 2px dashed #ddd;
+            border-radius: 12px;
+            padding: 30px;
+            color: #999;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        /* Responsive */
+        @media (max-width: 480px) {
+            .bloco {
+                padding: 35px 16px;
+            }
+
+            .titulo {
+                font-size: 24px;
+            }
+
+            .price-value {
+                font-size: 52px;
+            }
+
+            .produto-preview {
+                max-width: 240px;
+            }
+
+            .feature {
+                gap: 12px;
+            }
+
+            .feature-icon {
+                width: 40px;
+                height: 40px;
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <!-- BLOCO 1: ABERTURA -->
+        <section class="bloco">
+            <div class="badge">CONTINUACIÓN DEL RITUAL</div>
+            <h1 class="titulo">Siete días abren.<br>Veintiún días consolidan.</h1>
+
+            <p class="texto">
+                Acabas de recibir el ritual de las 7 noches.
+            </p>
+
+            <p class="texto">
+                Pero hay algo que debes saber antes de comenzar:
+            </p>
+
+            <p class="texto">
+                Siete días inician el proceso.<br>
+                Despiertan lo que estaba dormido.<br>
+                Abren lo que estaba cerrado.
+            </p>
+
+            <p class="texto destaque">
+                Pero lo que se abre puede cerrarse.<br>
+                Lo que se activa puede apagarse.<br>
+                Lo que se inicia puede perderse.
+            </p>
+
+            <p class="texto">
+                No por falta de fe.<br>
+                Sino por falta de continuidad.
+            </p>
+
+            <p class="texto">
+                Por eso existe esta continuación:<br>
+                un camino de 21 días para que lo que comienza no se pierda.
+            </p>
+        </section>
+
+        <!-- BLOCO 2: IMAGEM + LÓGICA -->
+        <section class="bloco">
+            <div class="produto-preview">
+                <img src="/upsell2/produto-mockup.png" alt="El Ritual Completo de los 21 Días">
+            </div>
+            <p class="produto-label">📖 Guía completa de 21 días</p>
+
+            <p class="subtitulo">Por qué 21 días.</p>
+
+            <p class="texto">
+                No es un número mágico.<br>
+                No es una regla inventada.
+            </p>
+
+            <p class="texto destaque">
+                Siete días despiertan.<br>
+                Catorce días fortalecen.<br>
+                Veintiún días establecen.
+            </p>
+
+            <p class="texto">
+                No se trata de hacer más.<br>
+                Se trata de no soltar.
+            </p>
+        </section>
+
+        <!-- BLOCO 3: FEATURES -->
+        <section class="bloco bloco-alt">
+            <p class="bloco-titulo">LO QUE RECIBIRÁS:</p>
+
+            <div class="features">
+                <div class="feature">
+                    <span class="feature-icon">📅</span>
+                    <div class="feature-text">
+                        <strong>Guía de 21 Días</strong>
+                        <span>Día por día, sin complicaciones</span>
+                    </div>
+                </div>
+
+                <div class="feature">
+                    <span class="feature-icon">🌙</span>
+                    <div class="feature-text">
+                        <strong>Orientaciones Diarias</strong>
+                        <span>Simples y directas</span>
+                    </div>
+                </div>
+
+                <div class="feature">
+                    <span class="feature-icon">📈</span>
+                    <div class="feature-text">
+                        <strong>Proceso Progresivo</strong>
+                        <span>Del día 8 al día 21</span>
+                    </div>
+                </div>
+
+                <div class="feature">
+                    <span class="feature-icon">🔄</span>
+                    <div class="feature-text">
+                        <strong>Continuidad Natural</strong>
+                        <span>Mismo tono, mismo respeto</span>
+                    </div>
+                </div>
+            </div>
+
+            <p class="texto-pequeno">
+                Nada cambia. Todo se profundiza.
+            </p>
+        </section>
+
+        <!-- BLOCO 4: PREÇO + WIDGET -->
+        <section class="bloco">
+
+            <div class="offer-box">
+                <p class="offer-label">ACCESO COMPLETO A LOS 21 DÍAS</p>
+                <p class="offer-price">
+                    <span class="price-symbol">$</span><span class="price-value">7</span>
+                </p>
+                <p class="offer-note">Pago único · Acceso inmediato</p>
+            </div>
+
+            <div class="widget-container">
+                <!-- COLE O WIDGET HOTMART ONE-CLICK ($5) AQUI -->
+                <div class="widget-placeholder">
+                    [CONTINUAR CON LOS 21 DÍAS]
+                </div>
+            </div>
+
+            <p class="texto-fim">
+                Si prefieres parar aquí, está bien.<br>
+                Lo que hiciste en los 7 días ya es tuyo.
+            </p>
+
+        </section>
+
+    </div>
+</body>
+
+</html>

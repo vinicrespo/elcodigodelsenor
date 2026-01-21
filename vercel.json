@@ -12,7 +12,15 @@
       "destination": "/app/index.html"
     },
     {
-      "source": "/((?!app).*)",
+      "source": "/upsell1",
+      "destination": "/upsell1/index.html"
+    },
+    {
+      "source": "/upsell2",
+      "destination": "/upsell2/index.html"
+    },
+    {
+      "source": "/((?!app|upsell1|upsell2).*)",
       "destination": "/index.html"
     }
   ]
