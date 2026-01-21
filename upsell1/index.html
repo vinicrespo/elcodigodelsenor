@@ -383,10 +383,12 @@
 
             <!-- WIDGET HOTMART -->
             <div class="widget-container">
-                <!-- COLE O WIDGET HOTMART ONE-CLICK ($5) AQUI -->
-                <div class="widget-placeholder">
-                    [WIDGET HOTMART $5]
-                </div>
+                <!-- HOTMART - Sales Funnel Widget -->
+                <div id="hotmart-sales-funnel"></div>
+                <script src="https://checkout.hotmart.com/lib/hotmart-checkout-elements.js"></script>
+                <script>
+                    checkoutElements.init('salesFunnel').mount('#hotmart-sales-funnel')
+                </script>
             </div>
 
             <!-- FECHAMENTO -->
