@@ -20,7 +20,11 @@
       "destination": "/upsell2/index.html"
     },
     {
-      "source": "/((?!app|upsell1|upsell2).*)",
+      "source": "/thanks",
+      "destination": "/thanks/index.html"
+    },
+    {
+      "source": "/((?!app|upsell1|upsell2|thanks).*)",
       "destination": "/index.html"
     }
   ]
