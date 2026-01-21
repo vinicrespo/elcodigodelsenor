@@ -56,93 +56,114 @@
         }
 
         /* ==================== BLOCO 2: TIMELINE ==================== */
-        .bloco-timeline {
+        .timeline-container {
             padding: 40px 20px;
             background: #111;
         }
 
         .timeline {
-            display: flex;
-            align-items: flex-start;
-            justify-content: center;
-            gap: 0;
-            max-width: 350px;
+            position: relative;
+            max-width: 320px;
             margin: 0 auto;
+            padding: 0 10px;
         }
 
-        .timeline-ponto {
+        /* Container dos pontos - FLEXBOX PERFEITO */
+        .timeline-pontos {
             display: flex;
-            flex-direction: column;
+            justify-content: space-between;
             align-items: center;
-            min-width: 70px;
+            position: relative;
+            z-index: 2;
         }
 
-        .timeline-marcador {
-            width: 48px;
-            height: 48px;
+        /* Cada ponto/círculo */
+        .ponto {
+            width: 52px;
+            height: 52px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 16px;
             font-weight: 700;
-            margin-bottom: 10px;
+            font-size: 16px;
         }
 
-        .timeline-marcador.inicio {
+        .ponto-inicio {
             background: #1a1a1a;
             border: 2px solid #333;
-            color: #666;
+            color: #555;
         }
 
-        .timeline-marcador.ativo {
-            background: linear-gradient(135deg, #D4AF37, #E8C547);
+        .ponto-atual {
+            background: #D4AF37;
             color: #000;
-            box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
         }
 
-        .timeline-marcador.pendente {
+        .ponto-futuro {
             background: transparent;
             border: 2px dashed #D4AF37;
             color: #D4AF37;
         }
 
-        .timeline-label {
+        /* Linha que conecta - posicionada ATRÁS dos pontos */
+        .timeline-linha {
+            position: absolute;
+            top: 26px;
+            left: 36px;
+            right: 36px;
+            height: 2px;
+            display: flex;
+            z-index: 1;
+        }
+
+        .linha-preenchida {
+            flex: 1;
+            background: #D4AF37;
+        }
+
+        .linha-pontilhada {
+            flex: 1;
+            background-image: repeating-linear-gradient(to right,
+                    #D4AF37 0px,
+                    #D4AF37 6px,
+                    transparent 6px,
+                    transparent 12px);
+        }
+
+        /* Labels abaixo dos pontos */
+        .timeline-labels {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 15px;
+            text-align: center;
+        }
+
+        .label {
+            width: 80px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .label-dia {
             font-size: 12px;
             color: #666;
             margin-bottom: 4px;
         }
 
-        .timeline-desc {
-            font-size: 13px;
+        .label-nome {
+            font-size: 14px;
             color: #fff;
             font-weight: 500;
-        }
-
-        .timeline-linha {
-            flex: 1;
-            height: 2px;
-            margin-top: 24px;
-            min-width: 40px;
-        }
-
-        .timeline-linha.ativo {
-            background: #D4AF37;
-        }
-
-        .timeline-linha.pendente {
-            background: repeating-linear-gradient(90deg,
-                    #D4AF37 0px,
-                    #D4AF37 4px,
-                    transparent 4px,
-                    transparent 8px);
         }
 
         /* Legenda */
         .timeline-legenda {
             display: flex;
             justify-content: center;
-            gap: 30px;
+            gap: 25px;
             margin-top: 30px;
         }
 
@@ -150,85 +171,37 @@
             display: flex;
             align-items: center;
             gap: 8px;
-        }
-
-        .legenda-cor {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-        }
-
-        .legenda-cor.ativo {
-            background: #D4AF37;
-        }
-
-        .legenda-cor.pendente {
-            border: 2px dashed #D4AF37;
-            background: transparent;
-        }
-
-        .legenda-texto {
             font-size: 12px;
             color: #888;
         }
 
-        /* ==================== BLOCO 2.5: COMPARATIVO ==================== */
-        .bloco-comparativo {
-            padding: 30px 20px;
-            max-width: 320px;
-            margin: 0 auto;
-        }
-
-        .comparativo-item {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            padding: 16px;
-            border-radius: 12px;
-            margin-bottom: 12px;
-        }
-
-        .comparativo-item.parar {
-            background: #161616;
-            border: 1px solid #222;
-        }
-
-        .comparativo-item.continuar {
-            background: rgba(212, 175, 55, 0.08);
-            border: 1px solid rgba(212, 175, 55, 0.3);
-        }
-
-        .comparativo-icone {
-            font-size: 20px;
-            width: 36px;
-            height: 36px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .legenda-dot {
+            width: 10px;
+            height: 10px;
             border-radius: 50%;
         }
 
-        .comparativo-item.parar .comparativo-icone {
-            color: #555;
-            background: #1a1a1a;
+        .legenda-dot.preenchido {
+            background: #D4AF37;
         }
 
-        .comparativo-item.continuar .comparativo-icone {
-            color: #D4AF37;
-            background: rgba(212, 175, 55, 0.15);
+        .legenda-dot.pontilhado {
+            background: transparent;
+            border: 2px dashed #D4AF37;
         }
 
-        .comparativo-texto strong {
-            display: block;
-            font-size: 14px;
-            color: #fff;
-            margin-bottom: 2px;
-        }
-
-        .comparativo-texto span {
-            font-size: 13px;
+        /* Texto de continuidade */
+        .texto-continuidade {
+            text-align: center;
+            font-size: 15px;
             color: #888;
+            line-height: 1.8;
+            padding: 20px;
+            max-width: 300px;
+            margin: 0 auto;
         }
+
+
 
         /* ==================== PRODUTO PREVIEW ==================== */
         .produto-preview {
@@ -402,67 +375,64 @@
         </div>
 
         <!-- BLOCO 2: TIMELINE VISUAL -->
-        <div class="bloco-timeline">
+        <div class="timeline-container">
             <div class="timeline">
-                <!-- Ponto 1: Início -->
-                <div class="timeline-ponto">
-                    <div class="timeline-marcador inicio">1</div>
-                    <div class="timeline-label">Día 1</div>
-                    <div class="timeline-desc">Inicio</div>
+
+                <!-- Os 3 pontos -->
+                <div class="timeline-pontos">
+                    <div class="ponto ponto-inicio">
+                        <span class="ponto-numero">1</span>
+                    </div>
+                    <div class="ponto ponto-atual">
+                        <span class="ponto-numero">7</span>
+                    </div>
+                    <div class="ponto ponto-futuro">
+                        <span class="ponto-numero">21</span>
+                    </div>
                 </div>
 
-                <!-- Linha conectora ativa -->
-                <div class="timeline-linha ativo"></div>
-
-                <!-- Ponto 2: Apertura (dia 7) -->
-                <div class="timeline-ponto">
-                    <div class="timeline-marcador ativo">7</div>
-                    <div class="timeline-label">Día 7</div>
-                    <div class="timeline-desc">Apertura</div>
+                <!-- A linha que conecta (por trás) -->
+                <div class="timeline-linha">
+                    <div class="linha-preenchida"></div>
+                    <div class="linha-pontilhada"></div>
                 </div>
 
-                <!-- Linha conectora pendente -->
-                <div class="timeline-linha pendente"></div>
-
-                <!-- Ponto 3: Consolidação (dia 21) -->
-                <div class="timeline-ponto">
-                    <div class="timeline-marcador pendente">21</div>
-                    <div class="timeline-label">Día 21</div>
-                    <div class="timeline-desc">Consolidación</div>
+                <!-- Labels abaixo -->
+                <div class="timeline-labels">
+                    <div class="label">
+                        <span class="label-dia">Día 1</span>
+                        <span class="label-nome">Inicio</span>
+                    </div>
+                    <div class="label">
+                        <span class="label-dia">Día 7</span>
+                        <span class="label-nome">Apertura</span>
+                    </div>
+                    <div class="label">
+                        <span class="label-dia">Día 21</span>
+                        <span class="label-nome">Consolidación</span>
+                    </div>
                 </div>
+
             </div>
 
             <!-- Legenda -->
             <div class="timeline-legenda">
                 <div class="legenda-item">
-                    <span class="legenda-cor ativo"></span>
-                    <span class="legenda-texto">Lo que ya tienes</span>
+                    <span class="legenda-dot preenchido"></span>
+                    <span>Lo que ya tienes</span>
                 </div>
                 <div class="legenda-item">
-                    <span class="legenda-cor pendente"></span>
-                    <span class="legenda-texto">Este acceso</span>
+                    <span class="legenda-dot pontilhado"></span>
+                    <span>Este acceso</span>
                 </div>
             </div>
         </div>
 
-        <!-- BLOCO 2.5: COMPARATIVO -->
-        <div class="bloco-comparativo">
-            <div class="comparativo-item parar">
-                <div class="comparativo-icone">◯</div>
-                <div class="comparativo-texto">
-                    <strong>Parar en el día 7</strong>
-                    <span>El proceso queda abierto</span>
-                </div>
-            </div>
-
-            <div class="comparativo-item continuar">
-                <div class="comparativo-icone">●</div>
-                <div class="comparativo-texto">
-                    <strong>Continuar hasta el día 21</strong>
-                    <span>El proceso se consolida</span>
-                </div>
-            </div>
-        </div>
+        <!-- Texto de continuidade -->
+        <p class="texto-continuidade">
+            Quien para en el día 7, deja el proceso abierto.<br>
+            Quien continúa hasta el día 21, lo consolida.
+        </p>
 
         <!-- BLOCO 3: CONTEÚDO -->
         <div class="bloco-conteudo">
@@ -502,8 +472,6 @@
 
             <!-- Texto de fechamento -->
             <p class="decisao-texto">
-                Este acceso no es obligatorio.<br>
-                Lo que adquiriste ya es válido por sí solo.<br>
                 Esto existe para quien prefiere no interrumpir.
             </p>
         </div>
